@@ -1,375 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Terms of Service — TikBack</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-<style>
-  :root {
-    --primary: #1A3FBA;
-    --accent:  #00C2FF;
-    --dark:    #0A0F2E;
-    --light:   #F4F7FF;
-    --text:    #1E1E2E;
-    --muted:   #6B7280;
-    --border:  #E5EAFF;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DuitBack Terms of Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:  #1A3FBA;
+      --cyan:  #00B4FF;
+      --bg:    #050D2E;
+      --card:  #0F1E52;
+      --text:  #E8EEFF;
+      --muted: #7B8EC8;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg); color: var(--text);
+      line-height: 1.75;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 5vw;
+      backdrop-filter: blur(16px);
+      background: rgba(5,13,46,.85);
+      border-bottom: 1px solid rgba(41,121,255,.15);
+    }
+    .nav-logo {
+      font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.4rem;
+      background: linear-gradient(90deg, var(--cyan), #2979FF);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    nav a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+    nav a:hover { color: var(--text); }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    .container {
+      max-width: 760px; margin: 0 auto;
+      padding: 4rem 5vw 6rem;
+    }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--light);
-    color: var(--text);
-    line-height: 1.75;
-  }
+    .page-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: 2px;
+      color: var(--cyan); text-transform: uppercase; margin-bottom: .8rem;
+    }
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800; letter-spacing: -1px;
+      margin-bottom: .5rem;
+    }
+    .meta { color: var(--muted); font-size: .88rem; margin-bottom: 3rem; }
 
-  header {
-    background: var(--dark);
-    padding: 28px 40px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 24px rgba(0,0,0,0.3);
-  }
+    .toc {
+      background: var(--card);
+      border: 1px solid rgba(41,121,255,.15);
+      border-radius: 16px; padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+    }
+    .toc h3 {
+      font-family: 'Sora', sans-serif; font-size: .9rem;
+      color: var(--cyan); margin-bottom: .8rem; font-weight: 700;
+    }
+    .toc ol { padding-left: 1.2rem; }
+    .toc li { margin-bottom: .4rem; }
+    .toc a { color: var(--muted); text-decoration: none; font-size: .9rem; }
+    .toc a:hover { color: var(--cyan); }
 
-  .logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    color: #fff;
-    letter-spacing: 1px;
-  }
+    .section {
+      margin-bottom: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(41,121,255,.1);
+    }
+    .section:first-of-type { border-top: none; }
 
-  .logo span {
-    color: var(--accent);
-  }
+    h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem; font-weight: 700;
+      margin-bottom: 1rem; color: #fff;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    h2 .sec-num {
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #fff; border-radius: 6px;
+      padding: .15rem .5rem; font-size: .75rem; font-weight: 700;
+    }
 
-  .badge {
-    background: var(--primary);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.5px;
-  }
+    p { color: var(--muted); margin-bottom: 1rem; }
+    ul, ol { color: var(--muted); padding-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: .4rem; }
 
-  .hero {
-    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-    padding: 64px 40px 56px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+    .highlight-box {
+      background: rgba(0,180,255,.07);
+      border: 1px solid rgba(0,180,255,.2);
+      border-radius: 12px; padding: 1.2rem 1.5rem;
+      margin: 1.2rem 0;
+    }
+    .highlight-box p { margin: 0; color: var(--text); }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    width: 400px; height: 400px;
-    border-radius: 50%;
-    background: rgba(0,194,255,0.08);
-    top: -100px; right: -100px;
-  }
+    .warning-box {
+      background: rgba(255,100,50,.07);
+      border: 1px solid rgba(255,100,50,.25);
+      border-radius: 12px; padding: 1.2rem 1.5rem;
+      margin: 1.2rem 0;
+    }
+    .warning-box p { margin: 0; color: #FFB89A; }
 
-  .hero::after {
-    content: '';
-    position: absolute;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: rgba(0,194,255,0.06);
-    bottom: -80px; left: -80px;
-  }
+    strong { color: var(--text); }
 
-  .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(28px, 5vw, 44px);
-    font-weight: 800;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero p {
-    color: rgba(255,255,255,0.65);
-    margin-top: 12px;
-    font-size: 14px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .container {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 56px 24px 80px;
-  }
-
-  .toc {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 28px 32px;
-    margin-bottom: 48px;
-    box-shadow: 0 4px 24px rgba(26,63,186,0.06);
-  }
-
-  .toc h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--primary);
-    margin-bottom: 16px;
-  }
-
-  .toc ol {
-    padding-left: 20px;
-  }
-
-  .toc li {
-    margin-bottom: 8px;
-  }
-
-  .toc a {
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-
-  .toc a:hover { color: var(--accent); }
-
-  section {
-    margin-bottom: 44px;
-    scroll-margin-top: 100px;
-  }
-
-  section h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .num {
-    background: var(--primary);
-    color: #fff;
-    width: 28px; height: 28px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  section p {
-    font-size: 15px;
-    color: #374151;
-    margin-bottom: 12px;
-  }
-
-  section ul, section ol {
-    padding-left: 22px;
-    margin-bottom: 12px;
-  }
-
-  section li {
-    font-size: 15px;
-    color: #374151;
-    margin-bottom: 8px;
-  }
-
-  .highlight-box {
-    background: linear-gradient(135deg, #EEF2FF, #E0EAFF);
-    border-left: 4px solid var(--primary);
-    border-radius: 0 12px 12px 0;
-    padding: 16px 20px;
-    margin: 16px 0;
-    font-size: 14px;
-    color: var(--primary);
-    font-weight: 500;
-  }
-
-  footer {
-    background: var(--dark);
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 32px 20px;
-    font-size: 13px;
-  }
-
-  footer strong {
-    color: #fff;
-  }
-
-  @media (max-width: 600px) {
-    header { padding: 20px; }
-    .hero  { padding: 48px 20px 40px; }
-    .toc   { padding: 20px; }
-  }
-</style>
+    footer {
+      text-align: center; padding: 2rem 5vw;
+      color: var(--muted); font-size: .82rem;
+      border-top: 1px solid rgba(41,121,255,.1);
+    }
+    footer a { color: var(--cyan); text-decoration: none; }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">TIK<span>BACK</span></div>
-  <span class="badge">Real Cashback</span>
-</header>
-
-<div class="hero">
-  <h1>Terms of Service</h1>
-  <p>Effective Date: May 21, 2026 &nbsp;·&nbsp; Last Updated: May 21, 2026</p>
-</div>
+<nav>
+  <div class="nav-logo">DuitBack</div>
+  <a href="index.html">← Kembali ke Beranda</a>
+</nav>
 
 <div class="container">
+  <div class="page-label">Legal</div>
+  <h1>DuitBack Terms of Service</h1>
+  <p class="meta">Terakhir diperbarui: 20 Mei 2025 &nbsp;·&nbsp; Berlaku untuk aplikasi DuitBack (Android)</p>
 
   <div class="toc">
-    <h3>Table of Contents</h3>
+    <h3>Daftar Isi</h3>
     <ol>
-      <li><a href="#s1">Acceptance of Terms</a></li>
-      <li><a href="#s2">Description of Service</a></li>
-      <li><a href="#s3">Eligibility</a></li>
-      <li><a href="#s4">User Account</a></li>
-      <li><a href="#s5">Cashback Program</a></li>
-      <li><a href="#s6">TikTok Shop Integration</a></li>
-      <li><a href="#s7">Prohibited Activities</a></li>
-      <li><a href="#s8">Intellectual Property</a></li>
-      <li><a href="#s9">Disclaimer of Warranties</a></li>
-      <li><a href="#s10">Limitation of Liability</a></li>
-      <li><a href="#s11">Termination</a></li>
-      <li><a href="#s12">Changes to Terms</a></li>
-      <li><a href="#s13">Contact Us</a></li>
+      <li><a href="#s1">Penerimaan Syarat</a></li>
+      <li><a href="#s2">Deskripsi Layanan</a></li>
+      <li><a href="#s3">Persyaratan Akun</a></li>
+      <li><a href="#s4">Ketentuan Penggunaan</a></li>
+      <li><a href="#s5">Mekanisme Cashback</a></li>
+      <li><a href="#s6">Penarikan Saldo</a></li>
+      <li><a href="#s7">Larangan Penggunaan</a></li>
+      <li><a href="#s8">Penghentian Akun</a></li>
+      <li><a href="#s9">Batasan Tanggung Jawab</a></li>
+      <li><a href="#s10">Integrasi TikTok Shop</a></li>
+      <li><a href="#s11">Perubahan Layanan</a></li>
+      <li><a href="#s12">Hukum yang Berlaku</a></li>
+      <li><a href="#s13">Hubungi Kami</a></li>
     </ol>
   </div>
 
-  <section id="s1">
-    <h2><span class="num">1</span> Acceptance of Terms</h2>
-    <p>By downloading, installing, or using the TikBack mobile application ("App") or any related services provided by TATANG TARIA EDI ("TikBack", "we", "us", or "our"), you agree to be bound by these Terms of Service ("Terms").</p>
-    <p>If you do not agree to these Terms, please do not use our App or services.</p>
-  </section>
+  <div class="highlight-box">
+    <p>Dengan mengunduh, mendaftar, atau menggunakan aplikasi DuitBack, Anda menyatakan telah membaca, memahami, dan menyetujui Syarat & Ketentuan Layanan ini. Jika Anda tidak menyetujui, harap hentikan penggunaan aplikasi DuitBack.</p>
+  </div>
 
-  <section id="s2">
-    <h2><span class="num">2</span> Description of Service</h2>
-    <p>TikBack is a cashback platform that enables users in Indonesia to earn cashback rewards when purchasing products through TikTok Shop via affiliate tracking links. Our services include:</p>
+  <div class="section" id="s1">
+    <h2><span class="sec-num">1</span> Penerimaan Syarat</h2>
+    <p>Syarat & Ketentuan ini merupakan perjanjian yang mengikat antara Anda ("Pengguna") dan DuitBack ("kami", "perusahaan"). Penggunaan aplikasi DuitBack secara berkelanjutan dianggap sebagai penerimaan atas semua ketentuan yang berlaku.</p>
+    <p>Kami berhak memperbarui syarat ini kapan saja. Perubahan akan diinformasikan melalui notifikasi di aplikasi atau email. Penggunaan aplikasi setelah pembaruan dianggap sebagai persetujuan Anda.</p>
+  </div>
+
+  <div class="section" id="s2">
+    <h2><span class="sec-num">2</span> Deskripsi Layanan</h2>
+    <p>DuitBack adalah aplikasi cashback untuk pembeli TikTok Shop di Indonesia. Layanan kami memungkinkan pengguna untuk:</p>
     <ul>
-      <li>Generation of affiliate tracking links for TikTok Shop products</li>
-      <li>Tracking of purchases made through affiliate links</li>
-      <li>Calculation and distribution of cashback rewards to user wallets</li>
-      <li>Withdrawal of cashback balance to DANA digital wallet</li>
+      <li>Mendapatkan cashback atas pembelian produk di TikTok Shop melalui link afiliasi DuitBack</li>
+      <li>Submit bukti pembelian untuk verifikasi cashback</li>
+      <li>Menarik saldo cashback ke akun DANA terdaftar</li>
+      <li>Melihat riwayat transaksi dan saldo cashback secara real-time</li>
     </ul>
-  </section>
+    <p>DuitBack beroperasi menggunakan API resmi TikTok Shop Partner Center untuk memverifikasi transaksi dan menghitung komisi afiliasi.</p>
+  </div>
 
-  <section id="s3">
-    <h2><span class="num">3</span> Eligibility</h2>
-    <p>To use TikBack, you must:</p>
+  <div class="section" id="s3">
+    <h2><span class="sec-num">3</span> Persyaratan Akun</h2>
+    <p>Untuk menggunakan DuitBack, Anda harus:</p>
     <ul>
-      <li>Be at least 17 years of age</li>
-      <li>Be a resident of Indonesia</li>
-      <li>Have a valid TikTok account and/or TikTok Shop access</li>
-      <li>Have a valid DANA digital wallet account for cashback withdrawal</li>
-      <li>Provide accurate and truthful registration information</li>
+      <li>Berusia minimal <strong>17 tahun</strong></li>
+      <li>Memiliki nomor HP aktif di Indonesia</li>
+      <li>Memiliki akun DANA aktif untuk pencairan cashback</li>
+      <li>Memberikan informasi yang benar, akurat, dan terkini</li>
+      <li>Menjaga kerahasiaan kredensial akun Anda</li>
     </ul>
-  </section>
-
-  <section id="s4">
-    <h2><span class="num">4</span> User Account</h2>
-    <p>You are responsible for maintaining the confidentiality of your account credentials. You agree to notify us immediately of any unauthorized use of your account. TikBack will not be liable for any loss resulting from unauthorized access to your account.</p>
-    <div class="highlight-box">
-      One account per user is permitted. Creating multiple accounts to abuse the cashback program is strictly prohibited and will result in permanent suspension.
+    <p>Satu pengguna hanya diperbolehkan memiliki <strong>satu akun aktif</strong>. Pembuatan akun ganda dapat mengakibatkan pemblokiran permanen.</p>
+    <div class="warning-box">
+      <p>⚠️ Anda bertanggung jawab atas seluruh aktivitas yang terjadi di bawah akun Anda. Segera laporkan ke kami jika terjadi akses tidak sah ke akun Anda.</p>
     </div>
-  </section>
+  </div>
 
-  <section id="s5">
-    <h2><span class="num">5</span> Cashback Program</h2>
-    <p>Cashback rewards are subject to the following conditions:</p>
+  <div class="section" id="s4">
+    <h2><span class="sec-num">4</span> Ketentuan Penggunaan</h2>
+    <p>Dengan menggunakan DuitBack, Anda menyetujui bahwa:</p>
     <ul>
-      <li>Cashback is only awarded for purchases made through TikBack affiliate links</li>
-      <li>Cashback amounts are determined by TikTok Shop's affiliate commission rates and may vary by product and seller</li>
-      <li>Cashback is credited to your TikBack wallet within approximately 7–30 days after the purchase is confirmed and the return/refund window has passed</li>
-      <li>Cancelled or returned orders are not eligible for cashback</li>
-      <li>Minimum withdrawal amount may apply</li>
-      <li>TikBack reserves the right to modify cashback rates at any time without prior notice</li>
+      <li>Anda hanya akan menggunakan layanan untuk keperluan pribadi yang sah</li>
+      <li>Anda tidak akan menyalahgunakan sistem cashback dengan cara apa pun</li>
+      <li>Anda tidak akan menggunakan bot, script otomatis, atau cara curang lainnya</li>
+      <li>Seluruh transaksi yang diajukan adalah transaksi nyata yang Anda lakukan sendiri</li>
+      <li>Anda memberikan informasi yang jujur dan akurat saat submit bukti pembelian</li>
     </ul>
-  </section>
+  </div>
 
-  <section id="s6">
-    <h2><span class="num">6</span> TikTok Shop Integration</h2>
-    <p>TikBack integrates with TikTok Shop's Affiliate Partner API to provide affiliate link generation and conversion tracking. By using TikBack, you acknowledge that:</p>
+  <div class="section" id="s5">
+    <h2><span class="sec-num">5</span> Mekanisme Cashback</h2>
+    <p>Cashback dihitung berdasarkan komisi afiliasi yang diterima DuitBack dari TikTok Shop Partner Center. Besaran cashback dapat berubah sewaktu-waktu mengikuti perubahan rate komisi dari TikTok Shop.</p>
+    <p><strong>Proses verifikasi cashback:</strong></p>
     <ul>
-      <li>TikBack is an independent affiliate partner and is not affiliated with, endorsed by, or sponsored by TikTok or ByteDance Ltd.</li>
-      <li>TikTok Shop's own terms of service and privacy policy apply to all purchases made on TikTok Shop</li>
-      <li>Cashback availability depends on the seller's participation in TikTok Shop's affiliate program</li>
+      <li>Pengguna submit link produk TikTok Shop melalui aplikasi DuitBack</li>
+      <li>Pembelian dilakukan melalui link afiliasi yang digenerate oleh DuitBack</li>
+      <li>Status pesanan diverifikasi melalui API TikTok Shop</li>
+      <li>Cashback dikreditkan setelah pesanan berstatus <strong>Selesai</strong> (Complete)</li>
+      <li>Proses verifikasi dapat memakan waktu hingga <strong>30 hari</strong> setelah pesanan selesai</li>
     </ul>
-  </section>
+    <div class="highlight-box">
+      <p>📌 Cashback bersifat estimasi dan dapat berbeda dari yang ditampilkan jika terjadi perubahan rate komisi dari TikTok Shop.</p>
+    </div>
+  </div>
 
-  <section id="s7">
-    <h2><span class="num">7</span> Prohibited Activities</h2>
-    <p>Users are prohibited from:</p>
+  <div class="section" id="s6">
+    <h2><span class="sec-num">6</span> Penarikan Saldo</h2>
+    <p>Ketentuan penarikan saldo cashback:</p>
     <ul>
-      <li>Submitting fraudulent purchase links or false transaction data</li>
-      <li>Manipulating the cashback system through self-referrals or artificial transactions</li>
-      <li>Using bots, scripts, or automated tools to interact with the App</li>
-      <li>Sharing, selling, or transferring cashback balances to other users</li>
-      <li>Violating any applicable laws or regulations</li>
-      <li>Attempting to reverse-engineer or tamper with the App</li>
+      <li>Minimum penarikan: <strong>Rp 10.000</strong></li>
+      <li>Penarikan dilakukan ke nomor DANA yang terdaftar di akun Anda</li>
+      <li>Proses pencairan memakan waktu maksimal <strong>3 hari kerja</strong></li>
+      <li>Perubahan nomor DANA memerlukan verifikasi identitas ulang</li>
+      <li>DuitBack berhak menahan pencairan jika terdapat indikasi penipuan</li>
     </ul>
-  </section>
+    <div class="warning-box">
+      <p>⚠️ Saldo cashback yang tidak ditarik selama lebih dari 12 bulan setelah akun tidak aktif dapat hangus. Kami akan menginformasikan sebelum saldo dihapus.</p>
+    </div>
+  </div>
 
-  <section id="s8">
-    <h2><span class="num">8</span> Intellectual Property</h2>
-    <p>All content, features, and functionality of the TikBack App — including but not limited to design, graphics, logos, and software — are the exclusive property of TATANG TARIA EDI and are protected by applicable intellectual property laws.</p>
-  </section>
-
-  <section id="s9">
-    <h2><span class="num">9</span> Disclaimer of Warranties</h2>
-    <p>TikBack is provided on an "as is" and "as available" basis without warranties of any kind. We do not guarantee that the App will be uninterrupted, error-free, or that cashback will always be available for every product on TikTok Shop.</p>
-  </section>
-
-  <section id="s10">
-    <h2><span class="num">10</span> Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law, TikBack shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App, including but not limited to loss of cashback rewards due to system errors, TikTok Shop policy changes, or network issues.</p>
-  </section>
-
-  <section id="s11">
-    <h2><span class="num">11</span> Termination</h2>
-    <p>We reserve the right to suspend or terminate your account at any time if you violate these Terms. Upon termination, any pending cashback may be forfeited if the account was found to have engaged in fraudulent activity.</p>
-  </section>
-
-  <section id="s12">
-    <h2><span class="num">12</span> Changes to Terms</h2>
-    <p>TikBack reserves the right to update these Terms at any time. Continued use of the App after changes are posted constitutes acceptance of the new Terms. We will notify users of significant changes through the App.</p>
-  </section>
-
-  <section id="s13">
-    <h2><span class="num">13</span> Contact Us</h2>
-    <p>If you have any questions about these Terms of Service, please contact us:</p>
+  <div class="section" id="s7">
+    <h2><span class="sec-num">7</span> Larangan Penggunaan</h2>
+    <p>Pengguna dilarang keras melakukan hal-hal berikut:</p>
     <ul>
-      <li><strong>Company:</strong> TATANG TARIA EDI</li>
-      <li><strong>Brand:</strong> TikBack: Real Cashback</li>
-      <li><strong>Location:</strong> Tasikmalaya, West Java, Indonesia</li>
-      <li><strong>Business Reg. No.:</strong> 2404260041189</li>
+      <li>Membuat transaksi fiktif atau pembelian palsu untuk mendapatkan cashback</li>
+      <li>Menggunakan akun orang lain atau membuat akun ganda</li>
+      <li>Melakukan rekayasa balik (reverse engineering) terhadap aplikasi DuitBack</li>
+      <li>Menyebarkan atau menjual akses ke akun DuitBack kepada pihak lain</li>
+      <li>Menggunakan layanan untuk tujuan ilegal berdasarkan hukum Indonesia</li>
+      <li>Melakukan tindakan yang dapat mengganggu atau merusak infrastruktur DuitBack</li>
+      <li>Mengeksploitasi bug atau celah keamanan dalam sistem kami</li>
     </ul>
-  </section>
+    <p>Pelanggaran atas larangan ini dapat mengakibatkan penghentian akun permanen dan tindakan hukum sesuai peraturan yang berlaku.</p>
+  </div>
+
+  <div class="section" id="s8">
+    <h2><span class="sec-num">8</span> Penghentian Akun</h2>
+    <p>DuitBack berhak menangguhkan atau menghentikan akun Anda jika:</p>
+    <ul>
+      <li>Anda melanggar salah satu ketentuan dalam dokumen ini</li>
+      <li>Terdeteksi aktivitas penipuan atau kecurangan</li>
+      <li>Terdapat permintaan dari otoritas hukum yang berwenang</li>
+      <li>Akun tidak aktif selama lebih dari 24 bulan</li>
+    </ul>
+    <p>Anda juga dapat menghapus akun kapan saja melalui menu Pengaturan di aplikasi atau dengan menghubungi tim support kami. Setelah penghapusan, saldo yang belum ditarik akan hangus jika tidak diklaim dalam 14 hari.</p>
+  </div>
+
+  <div class="section" id="s9">
+    <h2><span class="sec-num">9</span> Batasan Tanggung Jawab</h2>
+    <p>DuitBack tidak bertanggung jawab atas:</p>
+    <ul>
+      <li>Perubahan kebijakan atau rate komisi dari TikTok Shop yang mempengaruhi jumlah cashback</li>
+      <li>Gangguan layanan TikTok Shop API yang menyebabkan keterlambatan verifikasi</li>
+      <li>Kerugian akibat kelalaian pengguna dalam menjaga keamanan akun</li>
+      <li>Keterlambatan pencairan yang disebabkan oleh pihak DANA atau jaringan perbankan</li>
+      <li>Kehilangan data akibat force majeure (bencana alam, serangan siber, dll)</li>
+    </ul>
+    <div class="highlight-box">
+      <p>DuitBack menyediakan layanan "sebagaimana adanya" (as-is). Kami berupaya memberikan layanan terbaik namun tidak memberikan jaminan ketersediaan layanan 100% tanpa gangguan.</p>
+    </div>
+  </div>
+
+  <div class="section" id="s10">
+    <h2><span class="sec-num">10</span> Integrasi TikTok Shop</h2>
+    <p>DuitBack menggunakan API resmi TikTok Shop Partner Center. Dengan menggunakan DuitBack, Anda menyetujui bahwa:</p>
+    <ul>
+      <li>Data transaksi yang relevan akan diteruskan ke TikTok Shop API untuk verifikasi</li>
+      <li>Penggunaan data tunduk juga pada <a href="https://www.tiktok.com/legal/privacy-policy" target="_blank" style="color:var(--cyan)">Kebijakan Privasi TikTok</a></li>
+      <li>DuitBack tidak memiliki kontrol atas kebijakan yang ditetapkan oleh TikTok Shop</li>
+      <li>Perubahan pada program afiliasi TikTok Shop dapat mempengaruhi layanan DuitBack</li>
+    </ul>
+    <p>Scope API yang digunakan DuitBack dari TikTok Shop:</p>
+    <ul>
+      <li><strong>shop.info.read</strong> — untuk membaca informasi toko guna verifikasi afiliasi</li>
+      <li><strong>order.read</strong> — untuk memverifikasi status pesanan sebelum cashback disetujui</li>
+    </ul>
+  </div>
+
+  <div class="section" id="s11">
+    <h2><span class="sec-num">11</span> Perubahan Layanan</h2>
+    <p>DuitBack berhak untuk:</p>
+    <ul>
+      <li>Mengubah, menambah, atau menghapus fitur layanan kapan saja</li>
+      <li>Mengubah besaran cashback atau struktur komisi</li>
+      <li>Menghentikan layanan secara penuh dengan pemberitahuan minimal 30 hari</li>
+    </ul>
+    <p>Perubahan signifikan akan diinformasikan melalui notifikasi di aplikasi atau email terdaftar Anda.</p>
+  </div>
+
+  <div class="section" id="s12">
+    <h2><span class="sec-num">12</span> Hukum yang Berlaku</h2>
+    <p>Syarat & Ketentuan ini diatur dan ditafsirkan berdasarkan hukum yang berlaku di <strong>Republik Indonesia</strong>. Setiap sengketa yang timbul akan diselesaikan melalui musyawarah mufakat. Apabila tidak tercapai kesepakatan, sengketa akan diselesaikan melalui pengadilan yang berwenang di Indonesia.</p>
+  </div>
+
+  <div class="section" id="s13">
+    <h2><span class="sec-num">13</span> Hubungi Kami</h2>
+    <p>Jika Anda memiliki pertanyaan, keluhan, atau membutuhkan klarifikasi mengenai Syarat & Ketentuan ini, silakan hubungi:</p>
+    <div class="highlight-box">
+      <p><strong>DuitBack</strong><br>
+      Email: <a href="mailto:support@duitback.id" style="color:var(--cyan)">support@duitback.id</a><br>
+      Website: <a href="https://duitback.id" style="color:var(--cyan)">duitback.id</a><br>
+      Indonesia</p>
+    </div>
+  </div>
 
 </div>
 
 <footer>
-  <p>&copy; 2026 <strong>TikBack: Real Cashback</strong> · TATANG TARIA EDI · Indonesia</p>
-  <p style="margin-top:6px">These Terms of Service were last updated on May 21, 2026</p>
+  <p><a href="index.html">Beranda</a> &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:support@duitback.id">Kontak</a></p>
+  <p style="margin-top:.5rem">© 2025 DuitBack. All rights reserved.</p>
 </footer>
 
 </body>
